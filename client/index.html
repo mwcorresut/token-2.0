@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>mwcorresut</title>
+    <link rel="stylesheet" href="/client/css/styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Michroma&display=swap" rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/npm/vue@2.7.0/dist/vue.js"></script>
+</head>
+<body>
+    <div class="topic">
+        <input id="dark-mode" class="toggle" type="checkbox" name="dark mode" role="switch" value="on">
+        <label for="dark-mode" class="sr">Dark Mode</label>
+        <div class="curtains"></div>
+        <h1 class="nickname">MWCORRESUT</h1>
+
+        <div class="app-container" id="taskList">
+            <h1 class="app-header">TO DO</h1>
+            <div class="add-task">
+                <input id="two" type="text" autocomplete="off" placeholder="Add Task" v-model="tasks.name" @keyup.enter="newItem" class="task-input">
+                <input type="submit" value="" class="submit-task" @click="newItem" title="Add Task">
+            </div>
+            <ul class="task-list">
+                <li class="task-list-item" v-for="task in tasks">
+                    <label class="task-list-item-label">
+                        <input type="checkbox">
+                        <span id="try">{{task.name}}</span>
+                    </label>
+                    <span @click="delItem(task)" class="delete-btn" title="Delete Task">{{task.del}}</span>
+              </li>
+          </ul>
+      </div>
+</div>
+
+
+<script src="/client/js/todo.js"></script>
+
+</body>
+
+</html>
